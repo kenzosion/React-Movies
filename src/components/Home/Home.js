@@ -6,10 +6,16 @@ import FourColGrid from '../elements/FourColGrid/FourColGrid';
 import MovieThumb from '../elements/MovieThumb/MovieThumb';
 import LoadMoreBtn from '../elements/LoadMoreBtn/LoadMoreBtn';
 import Spinner from '../elements/Spinner/Spinner';
+import { data } from '../../config';
 
 export default class Home extends Component {
 state = {
-
+  movies: [],
+  heroImage: null,
+  loading: false,
+  currentPage: 0,
+  totalPages: 0,
+  searchTerms: ''
 }
 
   render() {
