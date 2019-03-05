@@ -18,6 +18,11 @@ state = {
   searchTerms: ''
 }
 
+componentDidMount() {
+  this.setState ({ loading: true })
+  const endpoint = `${data.API_URL}movie/popular?api_key=${data.API_KEY}&language=en-US&page=1`;
+}
+
   render() {
     return (
       <React.Fragment>
