@@ -5,16 +5,18 @@
 
 .rmdb-grid-content {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
 }
-
+ 
 .rmdb-grid-element {
-  margin: 0 40px 40px 0;
   background: #353535;
   max-height: 430px;
   animation: animateGrid 0.5s;
   overflow: hidden;
 }
+
 
 @keyframes animateGrid {
   from {
@@ -25,10 +27,10 @@
   }
 }
 
-/* For a 4-column grid */
+/* For a 4-column grid
 .rmdb-grid-element:nth-child(4n+4) {
   margin-right: 0;
-}
+} */
 
 @media screen and (max-width: 720px) {
   .rmdb-grid-content {
