@@ -32,7 +32,8 @@ componentDidMount() {
         movies: [...this.state.movies, ...result.results],
         heroImage: this.state.heroImage || result.results[0],
         loading: false,
-        
+        currentPage: result.page,
+        totalPages: result.totalPages
       })
     })
   }
