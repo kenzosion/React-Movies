@@ -21,7 +21,22 @@ state = {
 componentDidMount() {
   this.setState ({ loading: true })
   const endpoint = `${data.API_URL}movie/popular?api_key=${data.API_KEY}&language=en-US&page=1`;
+  this.fetchItems(endpoint);
 }
+
+  fetchItems = (endpoint) => {
+    fetch(endpoint)
+    .then(result => result.json())
+    .then(result => {
+      this.setState({
+        movies: [...this.state.movies, ...result.results],
+        heroImage: this.state.heroImage || result.results[0],
+        loading: false,
+        
+      })
+    })
+  }
+
 
   render() {
     return (
