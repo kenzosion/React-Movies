@@ -17,13 +17,13 @@
 }
 
 .rmdb-logo {
-  width: 300px;
-  margin-top: 20px;
+  width: 100px;
+  /* margin-top: 20px; */
   float: left;
 }
 
 .rmdb-tmdb-logo {
-  width: 122px;
+  width: 130px;
   margin-top: 25px;
   float: right;
 }

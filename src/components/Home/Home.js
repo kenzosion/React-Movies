@@ -88,7 +88,7 @@ export default class Home extends Component {
         {heroImage ? (
           <div>
             <HeroImage
-              image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${
+              image={`${data.IMAGE_BASE_URL}${data.BACKDROP_SIZE}${
                 heroImage.backdrop_path
               }`}
               title={heroImage.original_title}
@@ -108,7 +108,9 @@ export default class Home extends Component {
                 clickable={true}
                 image={
                   element.poster_path
-                    ? `${IMAGE_BASE_URL}${POSTER_SIZE}${element.poster_path}`
+                    ? `${data.IMAGE_BASE_URL}${data.POSTER_SIZE}${
+                        element.poster_path
+                      }`
                     : "./images/no_image.jpg"
                 }
                 movieId={element.id}
