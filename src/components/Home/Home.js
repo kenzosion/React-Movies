@@ -24,6 +24,21 @@ componentDidMount() {
   this.fetchItems(endpoint);
 }
 
+  loadMoreItems = () => {
+    // ES6 Destructuring the state
+    const { searchTerm, currentPage } = this.state;
+
+    let endpoint = '';
+    this.setState({ loading: true })
+
+    if (searchTerm === '') {
+      endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${currentPage + 1}`;
+    } else {
+      endpoint = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=${searchTerm}&page=${currentPage + 1}`;
+    }
+    this.fetchItems(endpoint);
+  }
+
   fetchItems = (endpoint) => {
     fetch(endpoint)
     .then(result => result.json())
