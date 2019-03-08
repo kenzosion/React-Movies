@@ -9,7 +9,7 @@ export const calcTime = (time) => {
 export const convertMoney = (money) => {
   var formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'GBP',
     minimumFractionDigits: 0,
   });
   return formatter.format(money);

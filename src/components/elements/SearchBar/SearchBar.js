@@ -4,8 +4,9 @@ import './SearchBar.css';
 
 export default class SearchBar extends Component {
     state = {
-
+      value: ''
     }
+    
   render() {
     return (
       <div>
