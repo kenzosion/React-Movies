@@ -1,12 +1,25 @@
-import React from 'react'
+import React from 'react';
+import './FourColGrid.css';
 
-export default function FourColGrid(props) {
-  return (
-    <React.Fragment>
-      <div className="rmdb-grid">
-        <h3>hello from fourcolgrid</h3>
+const FourColGrid = ({ header, loading, children }) => {
+
+  const renderElements = () => {
+    const gridElements = children.map((element, i) => (
+      <div key={i} className="rmdb-grid-element">
+        {element}
       </div>
-    </React.Fragment>
+    ))
+    return gridElements;
+  }
 
+  return (
+    <div className="rmdb-grid">
+      {header && !loading ? <h1>{header}</h1> : null}
+      <div className="rmdb-grid-content">
+        {renderElements()}
+      </div>
+    </div>
   )
 }
+
+export default FourColGrid;
